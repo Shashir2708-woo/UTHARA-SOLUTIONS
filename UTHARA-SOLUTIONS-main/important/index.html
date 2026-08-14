@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTTHARA SOLUTIONS - Autonomous AI Operating System for Smart Manufacturing</title>
+  
+  <!-- SEO & Brand Metadata -->
+  <meta name="description" content="UTTHARA SOLUTIONS: Production-grade Autonomous AI Operating System for Smart Manufacturing, Digital Twin, Machine Passports, and Industrial IoT Telemetry.">
+  <meta name="theme-color" content="#070a0f">
+
+  <!-- External Graphic & Visual Engines -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#f1f5f9',
+            canvas: '#f8fafc',
+            surface: '#ffffff',
+            subtle: '#e2e8f0',
+            medium: '#cbd5e1',
+            bright: '#94a3b8'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Apply saved / system theme before first paint (prevents flash) -->
+  <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('utthara-theme'); } catch (e) {}
+      var dark = stored === 'dark' || (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+
+  <!-- Industrial Design System Styles (Neumorphic Gold & Silver Theme) -->
+  <link rel="stylesheet" href="assets/css/variables.css?v=8">
+  <link rel="stylesheet" href="assets/css/base.css?v=4">
+  <link rel="stylesheet" href="assets/css/components.css?v=23">
+  <link rel="stylesheet" href="assets/css/modules.css?v=5">
+</head>
+<body>
+  <!-- Main Platform Layout Shell -->
+  <div id="app-root">
+    <!-- Top Public Marketing Header -->
+    <div id="public-header-container" style="display:none;"></div>
+
+    <!-- Top SaaS Console Global Header -->
+    <div id="header-container"></div>
+
+    <div id="app-body">
+      <!-- Left Sidebar Navigation -->
+      <div id="sidebar-container"></div>
+
+      <!-- Main Dynamic Content Mount Point -->
+      <main id="main-content" role="main"></main>
+    </div>
+  </div>
+
+  <!-- Core Database & State Engine Scripts -->
+  <script src="assets/js/core/db.js?v=30"></script>
+  <script src="assets/js/core/auth.js?v=30"></script>
+  <script src="assets/js/core/audit.js?v=30"></script>
+  <script src="assets/js/core/api.js?v=30"></script>
+  <script src="assets/js/core/router.js?v=32"></script>
+  <script src="assets/js/core/theme.js?v=2"></script>
+
+  <!-- Reusable Component Scripts -->
+  <script src="assets/js/components/public_header.js?v=27"></script>
+  <script src="assets/js/components/header.js?v=29"></script>
+  <script src="assets/js/components/nav.js?v=21"></script>
+  <script src="assets/js/components/toast.js?v=20"></script>
+  <script src="assets/js/components/modal.js?v=20"></script>
+
+  <!-- Public Website Marketing Modules -->
+  <script src="assets/js/public/home.js?v=20"></script>
+  <script src="assets/js/public/about.js?v=20"></script>
+  <script src="assets/js/public/platform.js?v=20"></script>
+  <script src="assets/js/public/features.js?v=20"></script>
+  <script src="assets/js/public/ai_solutions.js?v=20"></script>
+  <script src="assets/js/public/digital_twin_page.js?v=20"></script>
+  <script src="assets/js/public/passport_page.js?v=20"></script>
+  <script src="assets/js/public/iot_page.js?v=20"></script>
+  <script src="assets/js/public/operations_page.js?v=20"></script>
+  <script src="assets/js/public/industries.js?v=20"></script>
+  <script src="assets/js/public/pricing.js?v=20"></script>
+  <script src="assets/js/public/journey.js?v=20"></script>
+  <script src="assets/js/public/resources.js?v=20"></script>
+  <script src="assets/js/public/contact.js?v=20"></script>
+  <script src="assets/js/public/book_demo.js?v=20"></script>
+  <script src="assets/js/public/demo_management.js?v=20"></script>
+  <script src="assets/js/public/sales_workspace.js?v=20"></script>
+  <script src="assets/js/public/sales_portal.js?v=20"></script>
+  <script src="assets/js/public/onboarding_portal.js?v=20"></script>
+
+  <!-- Specialized Industrial Console Modules Scripts -->
+  <script src="assets/js/modules/dashboard.js?v=20"></script>
+  <script src="assets/js/modules/organizations.js?v=20"></script>
+  <script src="assets/js/modules/factories.js?v=20"></script>
+  <script src="assets/js/modules/machines.js?v=20"></script>
+  <script src="assets/js/modules/passport.js?v=20"></script>
+  <script src="assets/js/modules/twin.js?v=25"></script>
+  <script src="assets/js/modules/iot.js?v=20"></script>
+  <script src="assets/js/modules/ai.js?v=21"></script>
+  <script src="assets/js/modules/knowledge.js"></script>
+  <script src="assets/js/modules/maintenance.js"></script>
+  <script src="assets/js/modules/production.js"></script>
+  <script src="assets/js/modules/quality.js"></script>
+  <script src="assets/js/modules/inventory.js"></script>
+  <script src="assets/js/modules/hr.js"></script>
+  <script src="assets/js/modules/finance.js"></script>
+  <script src="assets/js/modules/notifications.js"></script>
+  <script src="assets/js/modules/reports.js"></script>
+  <script src="assets/js/modules/audit_log.js"></script>
+  <script src="assets/js/modules/settings.js"></script>
+
+  <!-- Page Entry Loader (shown on dashboard entry) -->
+  <div id="page-loader" class="page-loader-overlay hidden">
+    <div class="pl">
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__dot"></div>
+      <div class="pl__text">Loading…</div>
+    </div>
+  </div>
+
+  <!-- Application Bootstrap Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render Public Marketing Header
+      const pubHeaderElem = document.getElementById('public-header-container');
+      if (pubHeaderElem && window.PublicHeader) {
+        window.PublicHeader.render(pubHeaderElem);
+      }
+
+      // Render SaaS Console Header Shell
+      const headerElem = document.getElementById('header-container');
+      if (headerElem && window.Header) {
+        window.Header.render(headerElem);
+      }
+
+      // Render Sidebar Navigation
+      const sidebarElem = document.getElementById('sidebar-container');
+      if (sidebarElem && window.Nav) {
+        window.Nav.render(sidebarElem);
+      }
+
+      // Initial Route Dispatch
+      window.Router.handleRoute();
+
+      // Log Platform Launch Audit Event
+      window.AuditLogger.log('PLATFORM_INIT', 'UTTHARA SOLUTIONS SaaS Operating System Loaded', {
+        version: '2.0.0-prompt-02-complete',
+        vendor: 'UTTHARA SOLUTIONS'
+      });
+    });
+  </script>
+</body>
+</html>

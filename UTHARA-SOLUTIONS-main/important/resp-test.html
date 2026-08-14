@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Audit Harness</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #eee; margin: 0; padding: 16px; }
+    .row { margin-bottom: 28px; }
+    .row h3 { margin: 0 0 8px; font-size: 13px; color: #fbbf24; }
+    iframe { height: 500px; border: 1px solid #444; background: #fff; display: block; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <h3>MOBILE 375px</h3>
+    <iframe data-w="375" src="/#public-home" style="width:375px"></iframe>
+  </div>
+  <div class="row">
+    <h3>TABLET 768px</h3>
+    <iframe data-w="768" src="/#public-home" style="width:768px"></iframe>
+  </div>
+  <div class="row">
+    <h3>DESKTOP 1280px</h3>
+    <iframe data-w="1280" src="/#public-home" style="width:1280px"></iframe>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const routes = (params.get('routes') || params.get('route') || 'public-home').split(',');
+    const widths = [375, 768, 1280];
+    document.body.innerHTML = '';
+    const wrap = document.createElement('div');
+    routes.forEach(route => {
+      const row = document.createElement('div');
+      row.className = 'row';
+      const h = document.createElement('h3');
+      h.textContent = 'ROUTE ' + route;
+      row.appendChild(h);
+      widths.forEach(w => {
+        const cell = document.createElement('div');
+        cell.style.display = 'inline-block';
+        cell.style.marginRight = '8px';
+        const lbl = document.createElement('div');
+        lbl.textContent = w + 'px';
+        lbl.style.fontSize = '11px';
+        lbl.style.color = '#999';
+        cell.appendChild(lbl);
+        const f = document.createElement('iframe');
+        f.dataset.w = w;
+        f.dataset.route = route;
+        f.style.width = w + 'px';
+        f.src = '/#' + route;
+        cell.appendChild(f);
+        row.appendChild(cell);
+      });
+      wrap.appendChild(row);
+    });
+    document.body.appendChild(wrap);
+  </script>
+</body>
+</html>
